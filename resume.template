@@ -38,7 +38,7 @@
           <!-- ABOUT ME -->
           <div class="box">
             <h2><i class="fa fa-user ico"></i> About</h2>
-            <p>{{{basics.summary}}}</p>
+            <span>{{{basics.summary}}}</span>
           </div>
           {{/basics.summary}}
           {{#workBool}}
@@ -49,7 +49,8 @@
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
-                    <div class="where">{{company}}</div>
+                    <div class="where"><img src="{{image}}" width='32' height='32'/>&nbsp;{{company}}&nbsp;{{#image2}}<img src={{image2}} width='32' height='32'/>{{/image2}}</div>
+                    <div class="where">{{where}}</div>
                     {{#website}}
                     <div class="address">
                       <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
@@ -171,6 +172,38 @@
             </div>
             {{/basics.profiles}}
           </div>
+          {{#educationBool}}
+          <!-- EDUCATION -->
+          <div class="box">
+            <h2><i class="fa fa-university ico"></i> Education</h2>
+            <ul id="education" class="clearfix">
+              {{#education}}
+              <li>
+                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
+                <div class="description pull-right">
+                  <h3>{{institution}}</h3>
+                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                  {{#studyType}}<p><i class= "fa fa-map-marker fa-fw"></i> {{where}}</p>{{/studyType}}
+                  <p>{{area}}</p>
+                  {{#gpa}}
+                  <p>
+                    GPA: {{gpa}}
+                  </p>
+                  {{/gpa}}
+                  {{#educationCourses}}
+                    <div>Highlights</div>
+                    <ul class="list-group">
+                      {{#courses}}
+                      <li class="list-group-item">{{{.}}}</li>
+                      {{/courses}}
+                    </ul>
+                  {{/educationCourses}}
+                </div>
+              </li>
+              {{/education}}
+            </ul>
+          </div>
+          {{/educationBool}}
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
@@ -190,41 +223,11 @@
             {{/skills}}
           </div>
           {{/skillsBool}}
-          {{#educationBool}}
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2><i class="fa fa-university ico"></i> Education</h2>
-            <ul id="education" class="clearfix">
-              {{#education}}
-              <li>
-                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
-                <div class="description pull-right">
-                  <h3>{{institution}}</h3>
-                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
-                  <p>{{area}}</p>
-                  {{#gpa}}
-                  <p>
-                    GPA: {{gpa}}
-                  </p>
-                  {{/gpa}}
-                  {{#educationCourses}}
-                    <div>Courses</div>
-                    <ul class="list-group">
-                      {{#courses}}
-                      <li class="list-group-item">{{{.}}}</li>
-                      {{/courses}}
-                    </ul>
-                  {{/educationCourses}}
-                </div>
-              </li>
-              {{/education}}
-            </ul>
-          </div>
-          {{/educationBool}}
+
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
-            <h2><i class="fa fa-book ico"></i> Publications</h2>
+            <h2><i class="fa fa-podcast"></i>&nbsp;Speaking</h2>
             {{#publications}}
             <div class="publication panel panel-default">
               <div class="panel-heading">
@@ -234,7 +237,6 @@
                 {{#publisher}}
                 <div class="publisher"><i class= "fa fa-bookmark ico"></i> {{publisher}}</div>
                 {{/publisher}}
-                <div class="year">{{day}} {{month}} {{year}}</div>
                 {{#website}}
                 <div class="address">
                   <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
@@ -278,15 +280,24 @@
           </div>
           {{/interestsBool}}
           {{#referencesBool}}
+          <!-- REFERENCES -->
           <div class="box">
             <h2><i class= "fa fa-check-square ico"></i> References</h2>
             {{#references}}
+            <div id= "reference-group">
+            <div class="box">
+
             <blockquote>
               <div>{{{reference}}}</div>
               <footer>
-                <a href="{{website}}" target= "_blank">{{name}}</a>
+                <a href="{{url}}" target= "{{url}}">{{name}}</a><br>
+                <span class= "company">{{{company}}} </span>
+                <span class= "title">{{{title}}}</span>
               </footer>
-            </blockquote><br>
+            </blockquote>
+
+          </div>
+            </div>
             {{/references}}
           </div>
           {{/referencesBool}}
