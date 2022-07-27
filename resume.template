@@ -174,8 +174,8 @@
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
-                <div class="year pull-left">{{startDateYear}} <br><br>{{endDateYear}}</div>
-                <div class="description pull-right">
+                <!-- <div class="year pull-left">{{startDateYear}} <br><br>{{endDateYear}}</div> -->
+                <div class="description pull-left">
                   <h3>{{institution}}</h3>
                   {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
                   {{#studyType}}<p><i class= "fa fa-map-marker fa-fw"></i> {{where}}</p>{{/studyType}}
@@ -222,7 +222,7 @@
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
-            <h2><i class="fa fa-podcast"></i>&nbsp;Speaking</h2>
+            <h2><i class="fa fa-podcast"></i>&nbsp;Speaking/Articles</h2>
             {{#publications}}
             <div class="publication panel panel-default">
               <div class="panel-heading">
