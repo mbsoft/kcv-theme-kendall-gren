@@ -49,7 +49,7 @@
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
-                    <div class="where"><img src="{{image}}" width='32' height='32'/>&nbsp;<a href="{{website}}" target= "_blank"> {{company}}</a>&nbsp;{{#image2}}<img src={{image2}} width='32' height='32'/>{{/image2}}</div>
+                    <div class="where"><a href="{{website}}" target= "_blank"> {{company}}</a>&nbsp;</div>
                     <div class="where">{{where}}</div>
                     <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
                   </div>
